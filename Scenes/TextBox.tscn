@@ -58,5 +58,4 @@ margin_bottom = 128.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 3 )
-text = "0123456789012345678901234567890123456789"
 scroll_active = false

@@ -53,6 +53,8 @@ func initiate(icon_type, text: String) -> void:
 	height *= CHAR_HEIGHT;
 	if(height < CONTENT_MIN_HEIGHT):
 		height = CONTENT_MIN_HEIGHT;
-	self.rect_min_size = Vector2(0, height + (BORDER_WIDTH * 2));
+	height += (BORDER_WIDTH * 2);
+	self.rect_min_size = Vector2(0, height);
 	if(icon_type == GLOBAL.textbox_icon_type.NONE):
 		label.rect_min_size = Vector2(LABLE_WIDTH, height);
+	

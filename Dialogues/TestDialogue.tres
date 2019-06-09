@@ -1,0 +1,308 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/dialogue_tree/assets/ResIcon.png" type="Texture" id=1]
+[ext_resource path="res://addons/dialogue_tree/resource/dialogue_tree.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 1 )
+}
+connections = [ {
+"from": "ChoiceDialogue",
+"from_port": 2,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "BasicDialogue3",
+"from_port": 0,
+"to": "ChoiceDialogue2",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 1,
+"to": "BasicDialogue5",
+"to_port": 0
+}, {
+"from": "BasicDialogue2",
+"from_port": 0,
+"to": "BasicDialogue6",
+"to_port": 0
+}, {
+"from": "BasicDialogue4",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 0,
+"to": "BasicDialogue4",
+"to_port": 0
+}, {
+"from": "StartNode",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+}, {
+"from": "BasicDialogue",
+"from_port": 0,
+"to": "ChoiceDialogue",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 0,
+"to": "BasicDialogue7",
+"to_port": 0
+}, {
+"from": "BasicDialogue7",
+"from_port": 0,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 1,
+"to": "BasicDialogue8",
+"to_port": 0
+}, {
+"from": "BasicDialogue8",
+"from_port": 0,
+"to": "BasicDialogue3",
+"to_port": 0
+}, {
+"from": "BasicDialogue5",
+"from_port": 0,
+"to": "BasicDialogue4",
+"to_port": 0
+}, {
+"from": "BasicDialogue6",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+} ]
+Nodes = [ {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 80.0,
+"rect_size_y": 55.0,
+"rect_x": 1780.0,
+"rect_y": 66.1845
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 87.0,
+"rect_size_y": 55.0,
+"rect_x": 40.0,
+"rect_y": 246.184
+}, {
+"Actor": "",
+"Dialogue": "It was froody.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue3",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 780.0,
+"rect_y": 117.871
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "Not really.",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "Yeah, lets talk about it.",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue2",
+"rect_size_x": 210.0,
+"rect_size_y": 141.0,
+"rect_x": 1014.0,
+"rect_y": 123.317
+}, {
+"Actor": "",
+"Dialogue": "Ah.. that's okay. Lemme know if you need anything.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue5",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 1294.0,
+"rect_y": 143.316
+}, {
+"Actor": "",
+"Dialogue": "Anything on your mind?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue6",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 1294.0,
+"rect_y": 283.316
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "\"{test}\" == \"hello2\"",
+"Dialogue": "I'm okay.",
+"ToolTip": "Test must be hello2"
+}, {
+"Conditional": "false",
+"Dialogue": "I'm not feeling great.",
+"ToolTip": "This is disabled"
+}, {
+"Conditional": "true",
+"Dialogue": "I'm fantastic!",
+"ToolTip": "This is not disabled"
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue",
+"rect_size_x": 246.0,
+"rect_size_y": 177.0,
+"rect_x": 420.0,
+"rect_y": 446.184
+}, {
+"Actor": "You",
+"Dialogue": "Sure.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue2",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 940.0,
+"rect_y": 546.184
+}, {
+"Actor": "Plop",
+"Dialogue": "Fnord?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 160.0,
+"rect_y": 426.184
+}, {
+"Actor": "Plop",
+"Dialogue": "Wanna talk about it?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue8",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 560.0,
+"rect_y": 146.184
+}, {
+"Actor": "",
+"Dialogue": "That's awesome to hear!",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue4",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 1560.0,
+"rect_y": 146.184
+}, {
+"Actor": "",
+"Dialogue": "Testing sequental.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue7",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 740.0,
+"rect_y": 406.184
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Actor": "",
+"Dialogue": "It was froody.",
+"NodeName": "BasicDialogue3",
+"Ref": "",
+"next": 1
+}, {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "Not really.",
+"PassCondition": true,
+"ToolTip": "",
+"next": 8
+}, {
+"Conditional": "",
+"Dialogue": "Yeah, lets talk about it.",
+"PassCondition": true,
+"ToolTip": "",
+"next": 2
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue2",
+"Ref": ""
+}, {
+"Actor": "",
+"Dialogue": "Ah.. that's okay. Lemme know if you need anything.",
+"NodeName": "BasicDialogue5",
+"Ref": "",
+"next": 8
+}, {
+"Actor": "",
+"Dialogue": "Anything on your mind?",
+"NodeName": "BasicDialogue6",
+"Ref": "",
+"next": "End"
+}, {
+"Choices": [ {
+"Conditional": "\"{test}\" == \"hello2\"",
+"Dialogue": "I'm okay.",
+"PassCondition": true,
+"ToolTip": "Test must be hello2",
+"next": 9
+}, {
+"Conditional": "false",
+"Dialogue": "I'm not feeling great.",
+"PassCondition": true,
+"ToolTip": "This is disabled",
+"next": 7
+}, {
+"Conditional": "true",
+"Dialogue": "I'm fantastic!",
+"PassCondition": true,
+"ToolTip": "This is not disabled",
+"next": 5
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue",
+"Ref": ""
+}, {
+"Actor": "You",
+"Dialogue": "Sure.",
+"NodeName": "BasicDialogue2",
+"Ref": "",
+"next": 3
+}, {
+"Actor": "Plop",
+"Dialogue": "Fnord?",
+"NodeName": "BasicDialogue",
+"Ref": "",
+"next": 4
+}, {
+"Actor": "Plop",
+"Dialogue": "Wanna talk about it?",
+"NodeName": "BasicDialogue8",
+"Ref": "",
+"next": 0
+}, {
+"Actor": "",
+"Dialogue": "That's awesome to hear!",
+"NodeName": "BasicDialogue4",
+"Ref": "",
+"next": "End"
+}, {
+"Actor": "",
+"Dialogue": "Testing sequental.",
+"NodeName": "BasicDialogue7",
+"Ref": "",
+"next": 5
+} ],
+"start_index": 6
+}

@@ -1,0 +1,98 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/dialogue_tree/assets/ResIcon.png" type="Texture" id=1]
+[ext_resource path="res://addons/dialogue_tree/resource/dialogue_tree.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 1 )
+}
+connections = [ {
+"from": "StartNode",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+}, {
+"from": "BasicDialogue",
+"from_port": 0,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "BasicDialogue2",
+"from_port": 0,
+"to": "BasicDialogue3",
+"to_port": 0
+}, {
+"from": "BasicDialogue3",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+} ]
+Nodes = [ {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 80.0,
+"rect_size_y": 55.0,
+"rect_x": 980.0,
+"rect_y": 210.734
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 87.0,
+"rect_size_y": 55.0,
+"rect_x": 200.0,
+"rect_y": 211.686
+}, {
+"Actor": "Plop",
+"Dialogue": "Fnord?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 360.0,
+"rect_y": 211.686
+}, {
+"Actor": "You",
+"Dialogue": "Sure.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue2",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 580.0,
+"rect_y": 211.686
+}, {
+"Actor": "",
+"Dialogue": "It was froody.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue3",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 780.0,
+"rect_y": 211.686
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Actor": "Plop",
+"Dialogue": "Fnord?",
+"NodeName": "BasicDialogue",
+"Ref": "",
+"next": 1
+}, {
+"Actor": "You",
+"Dialogue": "Sure.",
+"NodeName": "BasicDialogue2",
+"Ref": "",
+"next": 2
+}, {
+"Actor": "",
+"Dialogue": "It was froody.",
+"NodeName": "BasicDialogue3",
+"Ref": "",
+"next": "End"
+} ],
+"start_index": 0
+}

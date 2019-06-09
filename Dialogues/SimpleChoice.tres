@@ -1,0 +1,137 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/dialogue_tree/assets/ResIcon.png" type="Texture" id=1]
+[ext_resource path="res://addons/dialogue_tree/resource/dialogue_tree.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 1 )
+}
+connections = [ {
+"from": "StartNode",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+}, {
+"from": "BasicDialogue",
+"from_port": 0,
+"to": "ChoiceDialogue",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 0,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 2,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "BasicDialogue2",
+"from_port": 0,
+"to": "EndNode",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 1,
+"to": "EndNode",
+"to_port": 0
+} ]
+Nodes = [ {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "Again",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "End",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "Plop?",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue",
+"rect_size_x": 210.0,
+"rect_size_y": 168.0,
+"rect_x": 700.0,
+"rect_y": 177.645
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 87.0,
+"rect_size_y": 55.0,
+"rect_x": 380.0,
+"rect_y": 177.645
+}, {
+"Actor": "You",
+"Dialogue": "Plop.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 500.0,
+"rect_y": 177.645
+}, {
+"Actor": "Other",
+"Dialogue": "No.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue2",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 980.0,
+"rect_y": 297.645
+}, {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 80.0,
+"rect_size_y": 55.0,
+"rect_x": 1280.0,
+"rect_y": 217.645
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "Again",
+"PassCondition": true,
+"ToolTip": "",
+"next": 2
+}, {
+"Conditional": "",
+"Dialogue": "End",
+"PassCondition": true,
+"ToolTip": "",
+"next": "End"
+}, {
+"Conditional": "",
+"Dialogue": "Plop?",
+"PassCondition": true,
+"ToolTip": "",
+"next": 2
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue",
+"Ref": ""
+}, {
+"Actor": "You",
+"Dialogue": "Plop.",
+"NodeName": "BasicDialogue",
+"Ref": "",
+"next": 0
+}, {
+"Actor": "Other",
+"Dialogue": "No.",
+"NodeName": "BasicDialogue2",
+"Ref": "",
+"next": "End"
+} ],
+"start_index": 1
+}
