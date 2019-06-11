@@ -1,21 +1,14 @@
 tool
-extends GraphNode
+extends "res://addons/dialogue_tree/scripts/Dialogue.gd";
 
-
-func _ready():
-	pass
+const type = "End";
 
 func save_data():
-	var dict = {
-		"filename" : get_filename(),
+	return {
+		"type" : type,
 		"name" : name,
 		"rect_x" : rect_position.x,
 		"rect_y" : rect_position.y,
 		"rect_size_x" : rect_size.x,
 		"rect_size_y" : rect_size.y
-	}
-	
-	return dict
-
-func load_data(dict):
-	pass
+	};

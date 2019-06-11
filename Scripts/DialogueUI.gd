@@ -28,10 +28,10 @@ func _on_Dialogue_Dialogue_Next(ref, actor, text):
 	addTextBox(iconType, text);
 	$Dialogue/Timer.start();
 	
-func _on_Dialogue_Choice_Next(ref, choices):
-	for i in range(0, choices.size()):
+func _on_Dialogue_Choice_Next(ref, branches):
+	for i in range(branches.size()):
 		activeButtons.append(button.instance());
-		activeButtons[i].text = choices[i].Dialogue;
+		activeButtons[i].text = branches[i];
 		activeButtons[i].connect("pressed", self, "_on_choice_pressed", [i]);
 		contentContainer.add_child(activeButtons[i]);
 		yield(get_tree(), "idle_frame");

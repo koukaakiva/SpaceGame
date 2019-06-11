@@ -1,7 +1,7 @@
 tool
 extends "res://addons/dialogue_tree/scripts/Dialogue.gd";
 
-const type = "Dialogue";
+const type = "Key Setter";
 
 func save_data():
 	return {
@@ -11,12 +11,12 @@ func save_data():
 		"rect_y" : rect_position.y,
 		"rect_size_x" : rect_size.x,
 		"rect_size_y" : rect_size.y,
-		"actor" : $ActorNameEdit.text,
-		"dialogue" : $DialogueEdit.text,
+		"key" : $KeyEdit.text,
+		"value" : $ValueEdit.text,
 		"refName" : $ReferenceNameEdit.text
 	};
 
 func load_data(data):
-	$ActorNameEdit.text = data.actor;
-	$DialogueEdit.text = data.dialogue;
-	$ReferenceNameEdit.text = data.refName;
+	$KeyEdit.text = data.key
+	$ValueEdit.text = data.value
+	$ReferenceNameEdit.text = data.refName
