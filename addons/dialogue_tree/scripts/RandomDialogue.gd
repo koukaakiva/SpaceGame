@@ -14,19 +14,19 @@ func save_data():
 		"rect_size_x" : rect_size.x,
 		"rect_size_y" : rect_size.y,
 		"RefName" : $ReferenceNameEdit.text,
-		"branches" : []
+		"branches" : 0
 	};
 	var isBranch = false;
 	for child in get_children():
 		if(child is HSeparator):
 			isBranch = true;
 		elif(isBranch):
-			data.branches.append({});
+			data.branches += 1;
 	return data;
 
 func load_data(data):
 	$ReferenceNameEdit.text = data.RefName;
-	for branch in data.branches:
+	for i in range(data.branches):
 		addBranch();
 
 func _on_MinusButton_pressed():

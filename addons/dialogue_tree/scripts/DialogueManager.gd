@@ -21,17 +21,21 @@ func next_dialogue(branch = 0):
 		return;
 	var connections = find_connections(current_node["name"]);
 	if((connections.size() - 1) < branch):
-		end_dialogue(-1);
+		print("Error: Not enough branches.");
+		end_dialogue();
 		return;
-	var next_node = find_next_node(connections[branch]["to"]);
-	if(next_node == -1):
-		end_dialogue(-2);
+	var next_node;
+	for connection in connections:
+		if(connection["from_port"] == branch):
+			next_node = find_next_node(connection["to"]);
+	if(next_node == null):
+		print("Error: Branch not found.");
+		end_dialogue();
 		return;
 	_process_next(DialogueResource.Nodes[next_node]);
 
 func _process_next(nextDialogue):
 	current_node = nextDialogue;
-	print(current_node);
 	match current_node["type"]:
 		"Dialogue":
 			emit_signal("Dialogue_Next", current_node["refName"], current_node["actor"], current_node["dialogue"]);
@@ -41,30 +45,30 @@ func _process_next(nextDialogue):
 			setKey(current_node.key, current_node.value);
 			next_dialogue();
 		"Key Branch":
-			var foundValue = false;
-			if(savedKeys.has(current_node.key)):
-				var value = savedKeys[current_node.key];
+			if(savedKeys.has(current_node["key"])):
+				var value = savedKeys[current_node["key"]];
 				for i in range(current_node["branches"].size() - 1):
-					if((!foundValue) and (current_node["branches"][i] == value)):
+					if(current_node["branches"][i] == value):
 						next_dialogue(i);
-						foundValue = true;
-			if(!foundValue):
-				next_dialogue(current_node["branches"].size() - 1);
+						return;
+			next_dialogue(current_node["branches"].size() - 1);
 		"Random":
-			next_dialogue(round(rand_range(0, current_node["branches"].size() - 1)));
+			next_dialogue(round(rand_range(0, current_node["branches"] - 1)));
 		"Start":
 			next_dialogue();
 		"End":
-			end_dialogue(1);
+			end_dialogue();
+		_:
+			print("Error: Unknown node type.");
+			end_dialogue();
 
 #used in the save data in the dialogue
 func setKey(key, value):
 	savedKeys[key] = value;
 
-func end_dialogue(code):
+func end_dialogue():
 	emit_signal("Dialogue_Ended");
 	in_dialogue = false;
-	print(code);
 
 func find_connections(name):
 	var results = [];

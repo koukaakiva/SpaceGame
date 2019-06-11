@@ -8,7 +8,6 @@ const dialogueNodes = {
 	"End": preload("res://addons/dialogue_tree/scenes/EndNode.tscn"),
 	"Dialogue": preload("res://addons/dialogue_tree/scenes/BasicDialogue.tscn"),
 	"Choice": preload("res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn"),
-	#"Conditional": preload("res://addons/dialogue_tree/scenes/ConditonalDialogue.tscn"),
 	"Random": preload("res://addons/dialogue_tree/scenes/RandomDialogue.tscn"),
 	"Key Setter": preload("res://addons/dialogue_tree/scenes/KeySetterDialogue.tscn"),
 	"Key Branch": preload("res://addons/dialogue_tree/scenes/KeyBranchDialogue.tscn")
@@ -86,13 +85,6 @@ func save_resource():
 	ResourceSaver.save(resource_path, resource);
 	current_node.DialogueResource = resource;
 
-# used to find the index of an exported node with a name value
-func find_with_name(inArray, inName):
-	for i in range(0, inArray.size()):
-		if inArray[i].NodeName == inName:
-			return i
-	return -1
-
 func clear_all_nodes():
 	$PrimaryGraphEditor.clear_connections();
 	for child in $PrimaryGraphEditor.get_children():
@@ -108,7 +100,4 @@ func remove_connection(id, node):
 func remove_all_connections(node):
 	for i in $PrimaryGraphEditor.get_connection_list():
 		if i.from == node.name or i.to == node.name:
-			$PrimaryGraphEditor.disconnect_node(i.from, i.from_port, i.to, i.to_port)
-
-#func isInstanceOf(instance, scene):
-#	return (instance.get_filename() == scene.get_path());
+			$PrimaryGraphEditor.disconnect_node(i.from, i.from_port, i.to, i.to_port);
