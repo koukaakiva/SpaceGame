@@ -7,6 +7,7 @@ const CONTENT_MIN_HEIGHT = 128;
 const BORDER_WIDTH = 8;
 const ICONLESS_LABLE_WIDTH = 968;
 const ICONED_LABLE_WIDTH = ICONLESS_LABLE_WIDTH - 132;
+enum textbox_icon_type {NONE, LEFT, RIGHT};
 onready var contentContainer = $Panel/NinePatchRect/MarginContainer/ContentContainer;
 onready var label = $Panel/NinePatchRect/MarginContainer/ContentContainer/Label;
 onready var icon = load("res://Scenes/Icon.tscn");
@@ -17,11 +18,11 @@ var LABLE_WIDTH;
 func initiate(icon_type, text: String) -> void:
 	if(!ready):
 		yield(self, "ready");
-	if(icon_type == GLOBAL.textbox_icon_type.LEFT):
+	if(icon_type == textbox_icon_type.LEFT):
 		contentContainer.add_child(icon.instance());
 		contentContainer.move_child(label, 1);
 		LABLE_WIDTH = ICONED_LABLE_WIDTH;
-	elif(icon_type == GLOBAL.textbox_icon_type.RIGHT):
+	elif(icon_type == textbox_icon_type.RIGHT):
 		contentContainer.add_child(icon.instance());
 		LABLE_WIDTH = ICONED_LABLE_WIDTH;
 	else:
@@ -55,6 +56,6 @@ func initiate(icon_type, text: String) -> void:
 		height = CONTENT_MIN_HEIGHT;
 	height += (BORDER_WIDTH * 2);
 	self.rect_min_size = Vector2(0, height);
-	if(icon_type == GLOBAL.textbox_icon_type.NONE):
+	if(icon_type == textbox_icon_type.NONE):
 		label.rect_min_size = Vector2(LABLE_WIDTH, height);
 	

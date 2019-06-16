@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/DialogueUI.gd" type="Script" id=1]
-[ext_resource path="res://addons/dialogue_tree/scripts/DialogueManager.gd" type="Script" id=2]
-[ext_resource path="res://addons/dialogue_tree/assets/Icon.png" type="Texture" id=3]
-[ext_resource path="res://Dialogues/TestDialogue.tres" type="Resource" id=4]
 
 [node name="DialogueUI" type="Control"]
 anchor_right = 1.0
@@ -33,17 +30,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 5
 
-[node name="Dialogue" type="Node" parent="."]
-script = ExtResource( 2 )
-__meta__ = {
-"_editor_icon": ExtResource( 3 )
-}
-DialogueResource = ExtResource( 4 )
-
-[node name="Timer" type="Timer" parent="Dialogue"]
-wait_time = 2.0
+[node name="Timer" type="Timer" parent="."]
 one_shot = true
-[connection signal="Choice_Next" from="Dialogue" to="." method="_on_Dialogue_Choice_Next"]
-[connection signal="Dialogue_Ended" from="Dialogue" to="." method="_on_Dialogue_Dialogue_Ended"]
-[connection signal="Dialogue_Next" from="Dialogue" to="." method="_on_Dialogue_Dialogue_Next"]
-[connection signal="timeout" from="Dialogue/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
