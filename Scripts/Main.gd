@@ -1,16 +1,11 @@
 extends Node2D;
 
-const events = [
-	preload("res://Events/TestEvent.tres"),
-	preload("res://Events/Grue.tres")
-	];
-var i = 1;
-
 func _ready():
-	$EventManager.start(events[0]);
-
-
-func _on_EventManager_Event_Ended():
-	if(i < events.size()):
-		$EventManager.start(events[i]);
-		i += 1;
+	#$EventManager.start(load("res://Events/GroundhogDay.tres"));
+	for child in $Sol.get_children():
+		print(child.name);
+		for grandchild in child.get_children():
+			if(grandchild is AstronomicalObject):
+				print("|-" + grandchild.name + ", mass:" + str(grandchild.mass));
+			else:
+				print("|-" + grandchild.name);

@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Classes/Star.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Classes/Planet.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Classes/Satellite.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Classes/SpaceStation.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Classes/Moon.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Classes/Anomaly.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Classes/AsteroidBelt.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Classes/Asteroid.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Classes/DwarfPlanet.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Classes/GasGiant.gd" type="Script" id=10]
+
+[node name="Sol" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Mercury" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Venus" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Earth" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sputnik" type="Node" parent="Earth"]
+script = ExtResource( 3 )
+
+[node name="International Space Staion" type="Node" parent="Earth"]
+script = ExtResource( 4 )
+
+[node name="Luna" type="Node" parent="Earth"]
+script = ExtResource( 5 )
+
+[node name="Mars" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Anomaly" type="Node" parent="Mars"]
+script = ExtResource( 6 )
+
+[node name="Phobos" type="Node" parent="Mars"]
+script = ExtResource( 5 )
+
+[node name="Deimos" type="Node" parent="Mars"]
+script = ExtResource( 5 )
+
+[node name="AsteroidBelt" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Pallas" type="Node" parent="AsteroidBelt"]
+script = ExtResource( 8 )
+
+[node name="Juno" type="Node" parent="AsteroidBelt"]
+script = ExtResource( 8 )
+
+[node name="Ceres" type="Node" parent="AsteroidBelt"]
+script = ExtResource( 9 )
+
+[node name="Jupiter" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="Saturn" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="Uranus" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="Neptune" type="Node" parent="."]
+script = ExtResource( 10 )
+
+[node name="Pluto" type="Node" parent="."]
+script = ExtResource( 9 )
