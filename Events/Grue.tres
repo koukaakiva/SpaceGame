@@ -20,37 +20,37 @@ Connections = [ {
 "to_port": 0
 } ]
 Nodes = [ {
-"name": "StartNode",
-"rect_size_x": 87.0002,
-"rect_size_y": 55.0002,
-"rect_x": 80.0,
-"rect_y": 574.729,
-"type": "Start"
-}, {
-"name": "EndNode",
-"rect_size_x": 80.0001,
-"rect_size_y": 55.0001,
-"rect_x": 960.0,
-"rect_y": 575.729,
-"type": "End"
-}, {
-"actor": "",
-"dialogue": "You are in a dark room. The is likely a Grue.",
-"name": "BasicDialogue",
-"rect_size_x": 170.0,
-"rect_size_y": 114.0,
-"rect_x": 180.0,
-"rect_y": 574.729,
-"refName": "",
-"type": "Dialogue"
-}, {
 "branches": [ "Search the room.", "", "" ],
 "name": "ChoiceDialogue",
 "rect_size_x": 135.0,
 "rect_size_y": 168.0,
-"rect_x": 400.0,
-"rect_y": 575.729,
+"rect_x": 445.974,
+"rect_y": 597.32,
 "refName": "",
 "type": "Choice"
+}, {
+"actor": "",
+"dialogue": "You are in a dark room. The is likely a Grue.",
+"name": "BasicDialogue",
+"rect_size_x": 220.0,
+"rect_size_y": 155.0,
+"rect_x": 205.974,
+"rect_y": 597.32,
+"refName": "",
+"type": "Dialogue"
+}, {
+"name": "StartNode",
+"rect_size_x": 87.0002,
+"rect_size_y": 55.0002,
+"rect_x": 105.974,
+"rect_y": 597.32,
+"type": "Start"
+}, {
+"name": "EndNode",
+"rect_size_x": 80.0002,
+"rect_size_y": 55.0001,
+"rect_x": 985.974,
+"rect_y": 593.049,
+"type": "End"
 } ]
 Objects = [  ]

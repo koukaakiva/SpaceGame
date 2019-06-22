@@ -1,28 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/TextBox.gd" type="Script" id=1]
 [ext_resource path="res://Raws/Border.png" type="Texture" id=2]
 [ext_resource path="res://Styles/MainFont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Raws/icon.png" type="Texture" id=4]
 
-[node name="TextBox" type="Control"]
-anchor_top = 1.0
-anchor_right = 1.0
+[node name="TextBox" type="VBoxContainer"]
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = 20.0
-margin_top = -144.0
-margin_right = -20.0
+margin_left = -500.0
+margin_right = 500.0
 grow_vertical = 0
 size_flags_horizontal = 3
 script = ExtResource( 1 )
 
-[node name="Panel" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-color = Color( 0, 0, 0, 1 )
+[node name="TextBoxNone" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_right = 1000.0
+margin_bottom = 156.0
+rect_min_size = Vector2( 1000, 156 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color( 0, 0, 0, 0 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Panel"]
+[node name="NinePatchRect" type="NinePatchRect" parent="TextBoxNone"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -34,7 +36,7 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel/NinePatchRect"]
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxNone/NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -44,18 +46,138 @@ custom_constants/margin_top = 8
 custom_constants/margin_left = 8
 custom_constants/margin_bottom = 8
 
-[node name="ContentContainer" type="HBoxContainer" parent="Panel/NinePatchRect/MarginContainer"]
+[node name="ContentContainer" type="HBoxContainer" parent="TextBoxNone/NinePatchRect/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
-margin_right = 976.0
-margin_bottom = 136.0
+margin_right = 992.0
+margin_bottom = 148.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_constants/separation = 0
 
-[node name="Label" type="RichTextLabel" parent="Panel/NinePatchRect/MarginContainer/ContentContainer"]
-margin_right = 968.0
-margin_bottom = 128.0
+[node name="Label" type="RichTextLabel" parent="TextBoxNone/NinePatchRect/MarginContainer/ContentContainer"]
+margin_right = 984.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 984, 128 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 3 )
 scroll_active = false
+
+[node name="TextBoxLeft" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_top = 160.0
+margin_right = 1000.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 1000, 156 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color( 0, 0, 0, 0 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextBoxLeft"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxLeft/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="ContentContainer" type="HBoxContainer" parent="TextBoxLeft/NinePatchRect/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 992.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Icon" type="TextureRect" parent="TextBoxLeft/NinePatchRect/MarginContainer/ContentContainer"]
+margin_right = 140.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 140, 140 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label" type="RichTextLabel" parent="TextBoxLeft/NinePatchRect/MarginContainer/ContentContainer"]
+margin_left = 144.0
+margin_right = 984.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 840, 140 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 3 )
+scroll_active = false
+
+[node name="TextBoxRight" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_top = 320.0
+margin_right = 1000.0
+margin_bottom = 476.0
+rect_min_size = Vector2( 1000, 156 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color( 0, 0, 0, 0 )
+
+[node name="NinePatchRect" type="NinePatchRect" parent="TextBoxRight"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="TextBoxRight/NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="ContentContainer" type="HBoxContainer" parent="TextBoxRight/NinePatchRect/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 992.0
+margin_bottom = 148.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="RichTextLabel" parent="TextBoxRight/NinePatchRect/MarginContainer/ContentContainer"]
+margin_right = 840.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 840, 140 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 3 )
+scroll_active = false
+
+[node name="Icon" type="TextureRect" parent="TextBoxRight/NinePatchRect/MarginContainer/ContentContainer"]
+margin_left = 844.0
+margin_right = 984.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 140, 140 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource( 4 )
+expand = true

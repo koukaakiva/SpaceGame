@@ -54,14 +54,9 @@ margin_right = 123.0
 margin_bottom = 77.0
 placeholder_text = "Actor"
 
-[node name="DialogueEdit" type="TextEdit" parent="."]
+[node name="DialogueEdit" type="LineEdit" parent="."]
 margin_left = 16.0
 margin_top = 78.0
 margin_right = 123.0
 margin_bottom = 102.0
-rect_min_size = Vector2( 107, 24 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Dialogue"
-wrap_enabled = true
-[connection signal="resize_request" from="." to="." method="_on_BasicDialogue_resize_request"]
+placeholder_text = "Dialogue"

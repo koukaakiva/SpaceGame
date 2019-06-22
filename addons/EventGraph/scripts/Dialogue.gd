@@ -20,3 +20,8 @@ func load_data(data):
 	$ActorNameEdit.text = data.actor;
 	$DialogueEdit.text = data.dialogue;
 	$ReferenceNameEdit.text = data.refName;
+	$DialogueEdit.rect_min_size.y = data.rect_size_y - 78;
+
+
+func _on_BasicDialogue_resize_request(new_minsize):
+	$DialogueEdit.rect_min_size.y = new_minsize.y - 78;
