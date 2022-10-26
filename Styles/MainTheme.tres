@@ -1,5 +1,0 @@
-[gd_resource type="Theme" format=2]
-
-[resource]
-Panel/colors/ = Color( 1, 1, 1, 1 )
-Panel/styles/panelf = null
