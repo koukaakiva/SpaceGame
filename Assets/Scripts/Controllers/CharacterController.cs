@@ -12,13 +12,19 @@ namespace Controllers {
 
         void Awake(){
             character = new Character(characterData);
+            GameTime.onGameTick += UpdateState;
+            foreach (Need need in character.needs){
+                //GameTime.onGameTick += need.Tick;
+                GameTime.RunEventAtTime(need.deplete, need.current);
+            }
         }
 
         void Update(){
-            character.setState(character.state.Tick(Time.deltaTime));
-            foreach (Need need in character.needs){
-                need.Tick(Time.deltaTime);
-            }
+
+        }
+
+        void UpdateState(float deltaTime){
+            character.setState(character.state.Tick(deltaTime));
         }
     }
 }

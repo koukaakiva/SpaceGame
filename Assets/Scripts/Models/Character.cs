@@ -21,7 +21,7 @@ namespace Models {
         public Character(CharacterData data){
             state = new CharacterIdle(this);
             designator = data.designator;
-            needs = new List<Need>{new Need("Hunger", 100, 100, 1)};
+            needs = new List<Need>{new Need("Hunger", 100, 100, 10)};
         }
 
         public void setState(CharacterState state){

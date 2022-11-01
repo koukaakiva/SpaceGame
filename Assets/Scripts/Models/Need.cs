@@ -26,5 +26,10 @@ namespace Models {
                 onNeedDepleted?.Invoke(this);
             }
         }
+
+        public void deplete(){
+            this.current = 0;
+            onNeedDepleted?.Invoke(this);
+        }
     }
 }
