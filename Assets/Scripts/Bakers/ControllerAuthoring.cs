@@ -23,8 +23,5 @@ public class ControllerBaker : Baker<ControllerAuthoring> {
             numberActersToSpawn = authoring.numberActersToSpawn,
             acterPrefab = GetEntity(authoring.acterPrefab, TransformUsageFlags.Dynamic)
         });
-        AddComponent(entity, new RandomNumberGenerator {
-            value = Unity.Mathematics.Random.CreateFromIndex(authoring.randomSeed)
-        });
     }
 }

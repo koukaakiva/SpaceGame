@@ -5,8 +5,11 @@ using Unity.Transforms;
 using Unity.Mathematics;
 
 [BurstCompile]
+[UpdateInGroup(typeof(InitializationSystemGroup))]
 public partial struct ActerSpawner : ISystem {
-    void OnCreate(ref SystemState state) { }
+    void OnCreate(ref SystemState state) {
+        state.RequireForUpdate<ControllerProperties>();
+    }
 
     void OnDestroy(ref SystemState state) { }
 
@@ -21,7 +24,14 @@ public partial struct ActerSpawner : ISystem {
             ecb.SetComponent(acter, new LocalTransform {
                 Position = new float3(3, 0, 0),
                 Scale = 1
-            }) ;
+            });
+            ecb.AddComponent(acter, new Movement {
+                velocity = float3.zero,
+                destination = new float3(3, 0, 0)
+            });
+            ecb.AddComponent(acter, new RandomNumberGenerator {
+                value = Unity.Mathematics.Random.CreateFromIndex((uint) i + 1)
+            });
         }
         ecb.Playback(state.EntityManager);
         ecb.Dispose();

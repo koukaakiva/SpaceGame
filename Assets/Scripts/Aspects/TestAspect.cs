@@ -1,7 +1,7 @@
 using Unity.Entities;
+using Unity.Transforms;
 
 public readonly partial struct TestAspect : IAspect {
     public readonly Entity entity;
-    private readonly RefRO<ControllerProperties> _controllerProperties;
-    private readonly RefRW<RandomNumberGenerator> _randomNumberGenerator;
+    private readonly RefRO<LocalTransform> _localTransform;
 }
