@@ -3,15 +3,15 @@ using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
+using UnityEngine;
 
 [BurstCompile]
 [UpdateInGroup(typeof(InitializationSystemGroup))]
 public partial struct ActerSpawner : ISystem {
+
     void OnCreate(ref SystemState state) {
         state.RequireForUpdate<ControllerProperties>();
     }
-
-    void OnDestroy(ref SystemState state) { }
 
     [BurstCompile]
     void OnUpdate(ref SystemState state) {
@@ -21,6 +21,7 @@ public partial struct ActerSpawner : ISystem {
         EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
         for(int i = 0; i < controllerProperties.numberActersToSpawn; i++) {
             Entity acter = ecb.Instantiate(controllerProperties.acterPrefab);
+            ecb.AddComponent(acter, new ActerTag{});
             ecb.SetComponent(acter, new LocalTransform {
                 Position = new float3(3, 0, 0),
                 Scale = 1
@@ -34,7 +35,7 @@ public partial struct ActerSpawner : ISystem {
             });
         }
         ecb.Playback(state.EntityManager);
-        ecb.Dispose();
+        //ecb.Dispose();
     }
 }
 

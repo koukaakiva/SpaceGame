@@ -1,19 +1,11 @@
 ﻿using Unity.Burst;
-using Unity.Collections;
 using Unity.Entities;
 using Unity.Transforms;
 using Unity.Mathematics;
-using UnityEngine;
-using UnityEngine.UIElements;
-using Unity.Jobs;
-using System;
+
 
 [BurstCompile]
 public partial struct MovementSystem : ISystem {
-
-    void OnCreate(ref SystemState state) { }
-
-    void OnDestroy(ref SystemState state) { }
 
     [BurstCompile]
     void OnUpdate(ref SystemState state) {
