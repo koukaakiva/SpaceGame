@@ -1,41 +1,42 @@
+using System;
 using Unity.Entities;
 using Unity.Physics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInputManager : MonoBehaviour
-{
-    public InputAction input;
+public class PlayerInputManager : MonoBehaviour {
+    public InputAction select;
     public Camera camera;
+    public Transform camerFocus;
 
     private Entity entity;
     private World world;
+    private Vector2 movementValue;
 
-    private void OnEnable()
-    {
-        input.started += MouseClicked;
-        input.Enable();
-
-        if(camera == null) camera = Camera.main;
-
+    private void OnEnable() {
+        select.started += MouseClicked;
+        select.Enable();
+        if (camera == null) camera = Camera.main;
         world = World.DefaultGameObjectInjectionWorld;
     }
 
-    private void OnDisable()
-    {
-        input.started -= MouseClicked;
-        input.Disable();
-        if (world.IsCreated && !world.EntityManager.Exists(entity))
-        {
-            world.EntityManager.DestroyEntity(entity);
-        }
+    private void Update() {
+        Vector3 movememtDirection = camerFocus.forward * movementValue.y + camerFocus.right * movementValue.x;
+        float movementSpeed = 50F;
+        camerFocus.position += movememtDirection * movementSpeed * Time.deltaTime;
     }
 
-    private void MouseClicked(InputAction.CallbackContext context)
-    {
+    private void OnDisable() {
+        select.started -= MouseClicked;
+        select.Disable();
+        if (world.IsCreated && !world.EntityManager.Exists(entity))
+            world.EntityManager.DestroyEntity(entity);
+    }
+
+    private void MouseClicked(InputAction.CallbackContext context) {
         Vector2 screenPosition = context.ReadValue<Vector2>();
         UnityEngine.Ray ray = camera.ScreenPointToRay(screenPosition);
-        if(world.IsCreated && !world.EntityManager.Exists(entity)) {
+        if (world.IsCreated && !world.EntityManager.Exists(entity)) {
             entity = world.EntityManager.CreateEntity();
             world.EntityManager.AddBuffer<ClickedPosition>(entity);
         }
@@ -45,6 +46,10 @@ public class PlayerInputManager : MonoBehaviour
             End = ray.GetPoint(camera.farClipPlane)
         };
         world.EntityManager.GetBuffer<ClickedPosition>(entity).Add(new ClickedPosition() { value = input });
+    }
+
+    private void OnMovement(InputValue value) {
+        movementValue = value.Get<Vector2>();
     }
 }
 

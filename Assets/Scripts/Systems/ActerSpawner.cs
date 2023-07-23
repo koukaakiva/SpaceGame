@@ -23,12 +23,12 @@ public partial struct ActerSpawner : ISystem {
             Entity acter = ecb.Instantiate(controllerProperties.acterPrefab);
             ecb.AddComponent(acter, new ActerTag{});
             ecb.SetComponent(acter, new LocalTransform {
-                Position = new float3(3, 0, 0),
+                Position = new float3(0, 0, 0),
                 Scale = 1
             });
             ecb.AddComponent(acter, new Movement {
                 velocity = float3.zero,
-                destination = new float3(3, 0, 0)
+                destination = new float3(0, 0, 0)
             });
             ecb.AddComponent(acter, new RandomNumberGenerator {
                 value = Unity.Mathematics.Random.CreateFromIndex((uint) i + 1)
