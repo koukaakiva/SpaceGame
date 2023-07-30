@@ -1,10 +1,19 @@
 {
-    "name": "MainGame",
+    "name": "PlayerInputActionMap",
     "maps": [
         {
             "name": "MainGame",
             "id": "de4671ee-177b-4077-a6c8-40ccfb476728",
             "actions": [
+                {
+                    "name": "Rotation",
+                    "type": "Value",
+                    "id": "2b9cbf80-e740-42a1-b9ed-a82c51609175",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
                 {
                     "name": "Movement",
                     "type": "Value",
@@ -16,6 +25,50 @@
                 }
             ],
             "bindings": [
+                {
+                    "name": "Arrow Keys",
+                    "id": "48356dbc-8b9d-450e-9b0b-2693eb4150da",
+                    "path": "AxisWithOneModifierInput",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Modifier",
+                    "id": "3eb25423-701c-4045-bf3c-6f119c0c8f59",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Negative",
+                    "id": "e2dbd1c1-dd31-4f42-b743-44bff1f272a4",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "cf08f104-556f-4988-97b9-acdbf49315aa",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Rotation",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
                 {
                     "name": "Arrow Keys",
                     "id": "64e73086-d5f7-4051-8a2f-d9102af9b3b4",

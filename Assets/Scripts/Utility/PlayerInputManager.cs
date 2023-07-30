@@ -12,6 +12,7 @@ public class PlayerInputManager : MonoBehaviour {
     private Entity entity;
     private World world;
     private Vector2 movementValue;
+    private float rotationValue;
 
     private void OnEnable() {
         select.started += MouseClicked;
@@ -23,7 +24,9 @@ public class PlayerInputManager : MonoBehaviour {
     private void Update() {
         Vector3 movememtDirection = camerFocus.forward * movementValue.y + camerFocus.right * movementValue.x;
         float movementSpeed = 50F;
-        camerFocus.position += movememtDirection * movementSpeed * Time.deltaTime;
+        if(rotationValue == 0)
+            camerFocus.position += movememtDirection * movementSpeed * Time.deltaTime;
+        camerFocus.eulerAngles += new Vector3(0, rotationValue * movementSpeed * Time.deltaTime, 0);
     }
 
     private void OnDisable() {
@@ -50,6 +53,11 @@ public class PlayerInputManager : MonoBehaviour {
 
     private void OnMovement(InputValue value) {
         movementValue = value.Get<Vector2>();
+    }
+
+    private void OnRotation(InputValue value) {
+        Debug.Log(value.Get<float>());
+        rotationValue = value.Get<float>();
     }
 }
 
