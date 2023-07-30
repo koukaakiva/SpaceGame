@@ -1,13 +1,15 @@
-using System;
 using Unity.Entities;
 using Unity.Physics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputManager : MonoBehaviour {
-    public InputAction select;
-    public Camera camera;
-    public Transform camerFocus;
+    [SerializeField]
+    private InputActionAsset inputActions;
+    [SerializeField]
+    private Camera camera;
+    [SerializeField]
+    private Transform camerFocus;
 
     private Entity entity;
     private World world;
@@ -15,8 +17,6 @@ public class PlayerInputManager : MonoBehaviour {
     private float rotationValue;
 
     private void OnEnable() {
-        select.started += MouseClicked;
-        select.Enable();
         if (camera == null) camera = Camera.main;
         world = World.DefaultGameObjectInjectionWorld;
     }
@@ -24,20 +24,17 @@ public class PlayerInputManager : MonoBehaviour {
     private void Update() {
         Vector3 movememtDirection = camerFocus.forward * movementValue.y + camerFocus.right * movementValue.x;
         float movementSpeed = 50F;
-        if(rotationValue == 0)
-            camerFocus.position += movememtDirection * movementSpeed * Time.deltaTime;
+        camerFocus.position += movememtDirection * movementSpeed * Time.deltaTime;
         camerFocus.eulerAngles += new Vector3(0, rotationValue * movementSpeed * Time.deltaTime, 0);
     }
 
     private void OnDisable() {
-        select.started -= MouseClicked;
-        select.Disable();
         if (world.IsCreated && !world.EntityManager.Exists(entity))
             world.EntityManager.DestroyEntity(entity);
     }
 
-    private void MouseClicked(InputAction.CallbackContext context) {
-        Vector2 screenPosition = context.ReadValue<Vector2>();
+    private void OnSelect(InputValue value) {
+        Vector2 screenPosition = value.Get<Vector2>();
         UnityEngine.Ray ray = camera.ScreenPointToRay(screenPosition);
         if (world.IsCreated && !world.EntityManager.Exists(entity)) {
             entity = world.EntityManager.CreateEntity();
@@ -51,12 +48,12 @@ public class PlayerInputManager : MonoBehaviour {
         world.EntityManager.GetBuffer<ClickedPosition>(entity).Add(new ClickedPosition() { value = input });
     }
 
-    private void OnMovement(InputValue value) {
-        movementValue = value.Get<Vector2>();
+    private void OnMove(InputValue value) {
+        if(inputActions.FindAction("Rotate").ReadValue<float>() == 0) //Because when this is not 0 that means the shift key is down and we should be rotating not moving.
+            movementValue = value.Get<Vector2>();
     }
 
-    private void OnRotation(InputValue value) {
-        Debug.Log(value.Get<float>());
+    private void OnRotate(InputValue value) {
         rotationValue = value.Get<float>();
     }
 }
