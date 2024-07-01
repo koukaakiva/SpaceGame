@@ -598,8 +598,9 @@ GameObject:
   - component: {fileID: 1293761270}
   - component: {fileID: 1293761269}
   - component: {fileID: 1293761271}
+  - component: {fileID: 1293761272}
   m_Layer: 0
-  m_Name: Player Input Manager
+  m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -617,39 +618,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb8ec016e7fb405e83079abc16c7c5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  select:
-    m_Name: Select
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9295d4d8-5f1a-449b-b9d7-0be071d04675
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: One Modifier
-      m_Id: ba29e6bd-e7b5-408d-beb8-c8f58b2de25e
-      m_Path: OneModifier
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select
-      m_Flags: 4
-    - m_Name: modifier
-      m_Id: 081febcf-376f-4236-ae51-9621fd6dcdbb
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select
-      m_Flags: 8
-    - m_Name: binding
-      m_Id: 882a94e0-0750-44ec-930a-71998b12224d
-      m_Path: <Mouse>/position
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Select
-      m_Flags: 8
-    m_Flags: 0
+  inputActions: {fileID: -944628639613478452, guid: b23cba2f203554d3e9c5ce8f7dfd7d5b,
+    type: 3}
   camera: {fileID: 330585545}
   camerFocus: {fileID: 1646671306}
 --- !u!4 &1293761270
@@ -682,7 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: b23cba2f203554d3e9c5ce8f7dfd7d5b,
     type: 3}
-  m_NotificationBehavior: 0
+  m_NotificationBehavior: 1
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -693,12 +663,38 @@ MonoBehaviour:
   m_ControlsChangedEvent:
     m_PersistentCalls:
       m_Calls: []
-  m_ActionEvents: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6bdd2038-cc57-4c50-bdd8-d44395cca464
+    m_ActionName: MainGame/Select[/Mouse/leftButton,/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2b9cbf80-e740-42a1-b9ed-a82c51609175
+    m_ActionName: MainGame/Rotate[/Keyboard/shift,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e145a14-61f7-43af-b8aa-2398eda79ce3
+    m_ActionName: MainGame/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MainGame
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1293761272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293761268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f04155f0c719442a877d89c1f256fe3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 330585545}
+  camerFocus: {fileID: 1646671306}
 --- !u!1 &1646671305
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,8 +798,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0

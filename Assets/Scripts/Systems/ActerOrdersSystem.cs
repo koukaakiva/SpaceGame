@@ -1,3 +1,5 @@
+#if false
+
 using Unity.Entities;
 using Unity.Burst;
 using Unity.Physics;
@@ -35,3 +37,5 @@ public partial struct ActerOrdersSystem : ISystem {
 		ecb.Playback(state.EntityManager);
 	}
 }
+
+#endif
