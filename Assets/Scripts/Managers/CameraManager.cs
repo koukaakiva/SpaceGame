@@ -13,18 +13,14 @@ public class CameraManager: MonoBehaviour {
     [SerializeField]
     private Transform camerFocus;
 
-    public static CameraManager instance = null;
+    public static CameraManager Instance { get; private set; }
     private Vector2 movementValue;
     private float rotationValue;
 
     private void OnAwake() {
-        if (instance == null) instance = this;
-        else if (instance != this) Destroy(this);
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(this);
         DontDestroyOnLoad(this);
-    }
-
-    public CameraManager getInstance() {
-        return this;
     }
 
     private void OnEnable() {

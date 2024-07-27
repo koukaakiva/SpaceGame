@@ -11,14 +11,14 @@ public class ActerSelectionManager : MonoBehaviour {
     [SerializeField]
     private Camera camera;
 
-    public static ActerSelectionManager instance = null;
+    public static ActerSelectionManager Instance { get; private set; }
     private Entity entity;
     private World world;
     private UnityEvent<Entity> ActerSelected;
 
     private void OnAwake() {
-        if (instance == null) instance = this;
-        else if (instance != this) Destroy(this);
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(this);
         DontDestroyOnLoad(this);
     }
 
@@ -26,10 +26,6 @@ public class ActerSelectionManager : MonoBehaviour {
         if (camera == null) camera = Camera.main;
         world = World.DefaultGameObjectInjectionWorld;
         ActerSelected = new UnityEvent<Entity>();
-    }
-
-    public ActerSelectionManager getInstance() {
-        return this;
     }
 
     public void SubscribeToActerSelected(UnityAction<Entity> callback) {
