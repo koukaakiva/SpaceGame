@@ -8,6 +8,9 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
+	"last_search.956173B0" = "parent"
+	"OpenInspectorPreview.956173B0" = "0"
+	"currentGroup.956173B0" = "all"
 }
 providers = {
 	performance = {
@@ -53,6 +56,16 @@ providers = {
 	store = {
 		active = true
 		priority = 100
+		defaultAction = null
+	}
+	journal = {
+		active = true
+		priority = 2500
+		defaultAction = null
+	}
+	archetype = {
+		active = true
+		priority = 2500
 		defaultAction = null
 	}
 }

@@ -596,8 +596,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1293761270}
-  - component: {fileID: 1293761272}
   - component: {fileID: 1293761269}
+  - component: {fileID: 1293761273}
+  - component: {fileID: 1293761272}
   - component: {fileID: 1293761271}
   m_Layer: 0
   m_Name: Managers
@@ -692,6 +693,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 330585545}
   camerFocus: {fileID: 1646671306}
+--- !u!114 &1293761273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293761268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 525f1a9bae1614a12861d6d60321f1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  Material: {fileID: -3033667219593020291, guid: eaa6c47361520974cb9ad5cd3991f5ee,
+    type: 3}
+  EntityCount: 42
 --- !u!1 &1646671305
 GameObject:
   m_ObjectHideFlags: 0

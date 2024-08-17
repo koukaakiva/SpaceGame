@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638257428570000000
+      ticks: 638578043210000000
     m_Hash: 2590276020
   m_LockFileStatus:
     m_FilePath: /Users/koukaakiva/Projects/SpaceGame/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638257428570000000
+      ticks: 638578043220000000
     m_Hash: 1105559029
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -111,19 +111,33 @@ m_ResolvedPackages:
     - 2.9.4
     - 2.9.5
     - 2.9.7
+    - 2.10.0
+    - 2.10.1
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
     - 3.0.0-pre.6
     - 3.0.0-pre.7
+    - 3.0.0-pre.8
+    - 3.0.0-pre.9
+    - 3.0.1
+    - 3.1.0
+    - 3.1.1
     compatible:
     - 2.9.5
     - 2.9.7
+    - 2.10.0
+    - 2.10.1
     - 3.0.0-pre.3
     - 3.0.0-pre.4
     - 3.0.0-pre.5
     - 3.0.0-pre.6
     - 3.0.0-pre.7
+    - 3.0.0-pre.8
+    - 3.0.0-pre.9
+    - 3.0.1
+    - 3.1.0
+    - 3.1.1
     recommended: 2.9.7
     deprecated: []
   dependencies:
@@ -273,16 +287,28 @@ m_ResolvedPackages:
     - 2.0.3
     - 2.0.4
     - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
+    - 2.1.0
+    - 2.2.0
+    - 2.3.1
+    - 2.4.3
+    - 2.4.4
     compatible:
     - 2.0.4
     - 2.0.5
+    - 2.0.7
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    recommended: 2.0.5
+    - 2.1.0
+    - 2.2.0
+    - 2.3.1
+    - 2.4.3
+    - 2.4.4
+    recommended: 2.0.7
     deprecated: []
   dependencies: []
   resolvedDependencies: []
@@ -357,6 +383,19 @@ m_ResolvedPackages:
     - 1.0.8
     - 1.0.10
     - 1.0.11
+    - 1.0.14
+    - 1.0.16
+    - 1.1.0-exp.1
+    - 1.1.0-pre.3
+    - 1.2.0-exp.3
+    - 1.2.0-pre.4
+    - 1.2.0-pre.6
+    - 1.2.0-pre.12
+    - 1.2.0
+    - 1.2.1
+    - 1.2.3
+    - 1.3.0-exp.1
+    - 1.3.0-pre.4
     compatible:
     - 1.0.0-exp.8
     - 1.0.0-exp.14
@@ -366,6 +405,10 @@ m_ResolvedPackages:
     - 1.0.8
     - 1.0.10
     - 1.0.11
+    - 1.0.14
+    - 1.0.16
+    - 1.1.0-exp.1
+    - 1.1.0-pre.3
     recommended: 
     deprecated: []
   dependencies:
@@ -507,11 +550,21 @@ m_ResolvedPackages:
     - 3.0.21
     - 3.0.22
     - 3.0.24
+    - 3.0.25
+    - 3.0.26
+    - 3.0.27
+    - 3.0.28
+    - 3.0.31
     compatible:
     - 3.0.21
     - 3.0.22
     - 3.0.24
-    recommended: 3.0.24
+    - 3.0.25
+    - 3.0.26
+    - 3.0.27
+    - 3.0.28
+    - 3.0.31
+    recommended: 3.0.31
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit
@@ -589,9 +642,15 @@ m_ResolvedPackages:
     - 2.0.16
     - 2.0.17
     - 2.0.18
+    - 2.0.20
+    - 2.0.21
+    - 2.0.22
     compatible:
     - 2.0.18
-    recommended: 2.0.18
+    - 2.0.20
+    - 2.0.21
+    - 2.0.22
+    recommended: 2.0.22
     deprecated: []
   dependencies:
   - name: com.unity.test-framework
@@ -761,10 +820,26 @@ m_ResolvedPackages:
     - 1.5.1
     - 1.6.1
     - 1.6.3
+    - 1.7.0
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    - 1.8.2
+    - 1.9.0
+    - 1.10.0
     compatible:
     - 1.5.1
     - 1.6.1
     - 1.6.3
+    - 1.7.0
+    - 1.8.0-pre.1
+    - 1.8.0-pre.2
+    - 1.8.0
+    - 1.8.1
+    - 1.8.2
+    - 1.9.0
+    - 1.10.0
     recommended: 1.5.1
     deprecated: []
   dependencies:
@@ -870,6 +945,19 @@ m_ResolvedPackages:
     - 1.0.8
     - 1.0.10
     - 1.0.11
+    - 1.0.14
+    - 1.0.16
+    - 1.1.0-exp.1
+    - 1.1.0-pre.3
+    - 1.2.0-exp.3
+    - 1.2.0-pre.4
+    - 1.2.0-pre.6
+    - 1.2.0-pre.12
+    - 1.2.0
+    - 1.2.1
+    - 1.2.3
+    - 1.3.0-exp.1
+    - 1.3.0-pre.4
     compatible:
     - 0.0.1-preview.1
     - 0.0.2-preview.1
@@ -900,6 +988,10 @@ m_ResolvedPackages:
     - 1.0.8
     - 1.0.10
     - 1.0.11
+    - 1.0.14
+    - 1.0.16
+    - 1.1.0-exp.1
+    - 1.1.0-pre.3
     recommended: 
     deprecated: []
   dependencies:
@@ -1173,6 +1265,13 @@ m_ResolvedPackages:
     - 1.3.5
     - 1.3.7
     - 1.3.8
+    - 1.3.9
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4
+    - 1.4.5
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1187,6 +1286,13 @@ m_ResolvedPackages:
     - 1.3.5
     - 1.3.7
     - 1.3.8
+    - 1.3.9
+    - 1.4.0
+    - 1.4.1
+    - 1.4.2
+    - 1.4.3
+    - 1.4.4
+    - 1.4.5
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -1355,23 +1461,39 @@ m_ResolvedPackages:
     - 3.0.4
     - 3.0.5
     - 3.0.6
+    - 3.0.7
+    - 3.0.8
+    - 3.0.9
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
     - 3.2.0-pre.5
+    - 3.2.0-pre.6
+    - 3.2.0-pre.7
+    - 3.2.0-pre.8
+    - 3.2.0-pre.9
+    - 3.2.0-pre.10
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
     - 3.0.6
+    - 3.0.7
+    - 3.0.8
+    - 3.0.9
     - 3.2.0-pre.1
     - 3.2.0-pre.2
     - 3.2.0-pre.3
     - 3.2.0-pre.4
     - 3.2.0-pre.5
+    - 3.2.0-pre.6
+    - 3.2.0-pre.7
+    - 3.2.0-pre.8
+    - 3.2.0-pre.9
+    - 3.2.0-pre.10
     - 4.0.0-pre.1
     - 4.0.0-pre.2
-    recommended: 3.0.6
+    recommended: 3.0.9
     deprecated: []
   dependencies:
   - name: com.unity.ugui
@@ -1513,20 +1635,28 @@ m_ResolvedPackages:
     - 1.7.3
     - 1.7.4
     - 1.7.5
+    - 1.7.6
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
     - 1.8.4
+    - 1.8.5
+    - 1.8.6
+    - 1.8.7
     compatible:
     - 1.7.4
     - 1.7.5
+    - 1.7.6
     - 1.8.0
     - 1.8.1
     - 1.8.2
     - 1.8.3
     - 1.8.4
-    recommended: 1.7.5
+    - 1.8.5
+    - 1.8.6
+    - 1.8.7
+    recommended: 1.7.6
     deprecated: []
   dependencies:
   - name: com.unity.modules.director
@@ -1604,6 +1734,7 @@ m_ResolvedPackages:
     - 1.0.0
     - 3.0.0-exp.1
     - 3.0.0-exp.3
+    - 3.0.0-exp.4
     compatible:
     - 1.0.0
     recommended: 1.0.0
@@ -1697,8 +1828,16 @@ m_ResolvedPackages:
     - 1.7.8
     - 1.8.0-pre.1
     - 1.8.0
+    - 1.9.0
+    - 1.9.1
+    - 1.9.2
+    - 1.9.4
     compatible:
     - 1.8.0
+    - 1.9.0
+    - 1.9.1
+    - 1.9.2
+    - 1.9.4
     recommended: 1.8.0
     deprecated:
     - 1.8.0-pre.1
@@ -3753,8 +3892,12 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.2.5
     - 1.2.6
+    - 1.3.1
+    - 1.3.2
     compatible:
     - 1.2.6
+    - 1.3.1
+    - 1.3.2
     recommended: 1.2.6
     deprecated: []
   dependencies: []
@@ -3930,10 +4073,30 @@ m_ResolvedPackages:
     - 1.8.3
     - 1.8.4
     - 1.8.7
+    - 1.8.8
+    - 1.8.9
+    - 1.8.10
+    - 1.8.11
+    - 1.8.12
+    - 1.8.13
+    - 1.8.14
+    - 1.8.15
+    - 1.8.16
+    - 1.8.17
     compatible:
     - 1.8.4
     - 1.8.7
-    recommended: 1.8.7
+    - 1.8.8
+    - 1.8.9
+    - 1.8.10
+    - 1.8.11
+    - 1.8.12
+    - 1.8.13
+    - 1.8.14
+    - 1.8.15
+    - 1.8.16
+    - 1.8.17
+    recommended: 1.8.17
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
@@ -4390,6 +4553,7 @@ m_ResolvedPackages:
     - 1.2.4
     - 1.3.1
     - 1.4.0
+    - 1.5.1
     - 2.1.0-exp.4
     - 2.1.0-pre.2
     - 2.1.0-pre.6
@@ -4398,10 +4562,22 @@ m_ResolvedPackages:
     - 2.1.1
     - 2.1.4
     - 2.2.0
+    - 2.2.1
+    - 2.3.0-exp.1
+    - 2.3.0-pre.3
+    - 2.4.0-exp.2
+    - 2.4.0-pre.2
+    - 2.4.0-pre.5
+    - 2.4.0
+    - 2.4.1
+    - 2.4.2
+    - 2.5.0-exp.1
+    - 2.5.0-pre.2
     compatible:
     - 1.2.4
     - 1.3.1
     - 1.4.0
+    - 1.5.1
     - 2.1.0-exp.4
     - 2.1.0-pre.2
     - 2.1.0-pre.6
@@ -4410,6 +4586,9 @@ m_ResolvedPackages:
     - 2.1.1
     - 2.1.4
     - 2.2.0
+    - 2.2.1
+    - 2.3.0-exp.1
+    - 2.3.0-pre.3
     recommended: 1.2.4
     deprecated: []
   dependencies:
@@ -4544,6 +4723,19 @@ m_ResolvedPackages:
     - 1.0.8
     - 1.0.10
     - 1.0.11
+    - 1.0.14
+    - 1.0.16
+    - 1.1.0-exp.1
+    - 1.1.0-pre.3
+    - 1.2.0-exp.3
+    - 1.2.0-pre.4
+    - 1.2.0-pre.6
+    - 1.2.0-pre.12
+    - 1.2.0
+    - 1.2.1
+    - 1.2.3
+    - 1.3.0-exp.1
+    - 1.3.0-pre.4
     compatible:
     - 0.0.12-preview.2
     - 0.0.12-preview.4
@@ -4606,6 +4798,10 @@ m_ResolvedPackages:
     - 1.0.8
     - 1.0.10
     - 1.0.11
+    - 1.0.14
+    - 1.0.16
+    - 1.1.0-exp.1
+    - 1.1.0-pre.3
     recommended: 
     deprecated: []
   dependencies:
@@ -5027,10 +5223,36 @@ m_ResolvedPackages:
     - 1.21.3
     - 1.21.5
     - 1.21.7
+    - 1.21.8
+    - 1.21.9
+    - 1.21.20
+    - 1.21.21
+    - 1.21.22
+    - 1.21.23
+    - 1.21.24
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+    - 2.1.2
+    - 2.1.3
+    - 2.1.4
     compatible:
     - 1.21.5
     - 1.21.7
-    recommended: 1.21.7
+    - 1.21.8
+    - 1.21.9
+    - 1.21.20
+    - 1.21.21
+    - 1.21.22
+    - 1.21.23
+    - 1.21.24
+    - 2.0.1
+    - 2.0.2
+    - 2.1.0
+    - 2.1.2
+    - 2.1.3
+    - 2.1.4
+    recommended: 1.21.24
     deprecated: []
   dependencies: []
   resolvedDependencies: []
